@@ -6,14 +6,20 @@
       <h1>$Title</h1>
     </header>
 
-    <div class="owl-carousel owl-theme">
+    <div id="owl-demo" class="owl-carousel owl-theme">
       <% if $HomePageSlides %>
           <% loop $HomePageSlides %>
             <% if $Image %>
-              <div class="item">$Image</div>
+            <div>
+              <div class="item">
+              $Image
+              </div>
             <% end_if %>
             <% if $Title %>
-              <h2>$Title</h2>
+              <div>
+                <h2>$Title</h2>
+              </div>
+            </div>
             <% end_if %>
           <% end_loop %>
       <% end_if %>
