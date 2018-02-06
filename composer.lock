@@ -1907,12 +1907,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "77c47a38fad161e398cf7878f6cc5459fc29248f"
+                "reference": "9ca53d1adb12d26b6727421f013686aaf4169923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/77c47a38fad161e398cf7878f6cc5459fc29248f",
-                "reference": "77c47a38fad161e398cf7878f6cc5459fc29248f",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/9ca53d1adb12d26b6727421f013686aaf4169923",
+                "reference": "9ca53d1adb12d26b6727421f013686aaf4169923",
                 "shasum": ""
             },
             "require": {
@@ -1978,7 +1978,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2018-01-28T20:56:44+00:00"
+            "time": "2018-02-02T01:37:38+00:00"
         },
         {
             "name": "silverstripe/vendor-plugin",
