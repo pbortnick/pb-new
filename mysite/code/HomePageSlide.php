@@ -5,8 +5,6 @@ use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TextField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
-
-
 class HomePageSlide extends DataObject
 {
     private static $db = [

@@ -1,35 +1,41 @@
 <?php
-
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\TextareaField;
-use SilverStripe\Forms\FormAction;
 use SilverStripe\Forms\Form;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\DateField;
+use SilverStripe\Forms\TextareaField;
+
 use PageController;
 
 class SubmissionFormPageController extends PageController
 {
-    private static $allowed_actions = ['Form'];
-    public function Form()
-    {
-        $fields = new FieldList(
-          new TextField('Title'),
-          new DateField('Date'),
-          new FileField('MyFile')
-        );
-        $actions = new FieldList(
-          new FormAction('doUpload', 'Upload file'),
-          new FormAction('submit', 'Submit')
-        );
-        return new Form($this, 'Form', $fields, $actions);
-    }
+  private static $allowed_actions = [
+    'NewSubmissionForm'
+  ];
 
-    public function sendForm($data, $form)
-    {
-      $title = $data['Title'];
-      $upload = $data['MyFile'];
+  public function NewSubmissionForm()
+  {
+    $fields = new FieldList(
+      TextField::create('Title','Title'),
+      DateField::create('Date','Date'),
+      TextareaField::create('Comment','Comment')
+    );
+    $actions = new FieldList(
+      new FormAction('sendSubmissionForm')
+    );
 
-      return $this->redirect('/image-slides');
-    }
+    $form = new Form($this, 'NewSubmissionForm', $fields, $actions);
+
+    return $form;
+  }
+
+  public function sendSubmissionForm($data, $form)
+  {
+    $title = $data['Title'];
+    $date = $data['Date'];
+    $comment = $data['Comment'];
+
+    return $this->redirectBack();
+  }
 }
