@@ -20,5 +20,3 @@ require('font-awesome');
 // Load Bootstrap:
 
 require('bootstrap-loader');
-
-require('owl.carousel');

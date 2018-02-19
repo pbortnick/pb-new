@@ -9,10 +9,9 @@
     $MetaTags(false)<title>$Title &ndash; $SiteConfig.Title</title>
 
     <% require themedCSS('production/styles/bundle') %>
-    <%require css('http://localhost:8080/production/styles/bundle.css')%>
-    <% require themedCSS('/node_modules/owl.carousel/dist/assets/owl.carousel.min.css') %>
+
+    <% require themedCSS('/owl.carousel/dist/assets/owl.carousel.min.css') %>
     <% require themedCSS('/node_modules/owl.carousel/dist/assets/owl.theme.default.css') %>
-    <% require themedCSS('source/styles/slides.css') %>
 
 
   </head>
@@ -22,11 +21,8 @@
     <% include Layout Layout=$Layout %>
     <% include Footer %>
 
-    <% require themedJavascript('production/js/bundle') %>
     <% require themedJavascript('/node_modules/jquery/dist/jquery.js') %>
-    <% require themedJavascript('/node_modules/owl.carousel/dist/owl.carousel.min.js') %>
-    <%require javascript('http://localhost:8080/production/js/bundle.js')%>
-    <% require themedJavascript('/source/bundles/slides.js') %>
+    <% require themedJavascript('/source/bundles/owl.carousel.min.js') %>
 
   </body>
 </html>
