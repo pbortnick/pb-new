@@ -11,7 +11,6 @@
     <% require themedCSS('production/styles/bundle') %>
 
     <% require themedCSS('/owl.carousel/dist/assets/owl.carousel.min.css') %>
-    <% require themedCSS('/node_modules/owl.carousel/dist/assets/owl.theme.default.css') %>
 
 
   </head>
