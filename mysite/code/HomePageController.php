@@ -12,7 +12,12 @@ use SilverStripe\View\Requirements;
 
 class HomePageController extends PageController
 {
-  public function CommentForm()
+
+  private static $allowed_actions = [
+    'ImageCommentForm',
+  ];
+
+  public function ImageCommentForm()
   {
     $form = Form::create(
         $this,
@@ -24,11 +29,30 @@ class HomePageController extends PageController
             DateField::create('Date','')
         ),
         FieldList::create(
-            FormAction::create('handleComment','Submit Comment')
+            FormAction::create('submitComment','Submit Comment')
+                ->setUseButtonTag(true)
+                ->addExtraClass('btn btn-default-color btn-lg')
         ),
-        RequiredFields::create('Name','Email','Comment')
+        RequiredFields::create('Name','Email','Date','Comment')
     );
 
     return $form;
+  }
+
+  public function submitComment($data, $form)
+  {
+    $comment = HomePageComment::create();
+    $comment->HomePageSlideID = $this->ID;
+    $comment->Name = $data['Name'];
+    $comment->Email = $data['Email'];
+    $date->Date = $data['Date'];
+    $comment->Comment = $data['Comment'];
+
+    $form->saveInto($comment);
+    $comment->write();
+
+    $form->sessionMessage('Thanks for your comment!','good');
+
+    return $this->redirectBack();
   }
 }

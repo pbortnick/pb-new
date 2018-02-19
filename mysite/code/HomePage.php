@@ -7,8 +7,9 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
 class HomePage extends Page
 {
+
   private static $has_many = [
-    'HomePageSlides' => 'HomePageSlide'
+    'HomePageSlides' => 'HomePageSlide',
   ];
 
   public function getCMSFields() {

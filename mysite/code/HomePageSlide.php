@@ -16,6 +16,10 @@ class HomePageSlide extends DataObject
       'HomePage' => 'HomePage'
     ];
 
+    private static $has_many = [
+      'HomePageComments' => 'HomePageComment'
+    ];
+
     public function getCMSFields() {
       $f = parent::getCMSFields();
       if ($this->exists()) {
