@@ -13,6 +13,10 @@ class HomePageComment extends DataObject
     ];
 
     private static $has_one = [
-        'HomePageSlide' => 'HomePageSlide'
+        'HomePage' => 'HomePage'
     ];
+
+    // private static $has_one = [
+    //     'HomePageSlide' => 'HomePageSlide'
+    // ];
 }

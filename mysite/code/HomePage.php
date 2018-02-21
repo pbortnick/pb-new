@@ -10,6 +10,7 @@ class HomePage extends Page
 
   private static $has_many = [
     'HomePageSlides' => 'HomePageSlide',
+    'HomePageComments' => 'HomePageComment'
   ];
 
   public function getCMSFields() {

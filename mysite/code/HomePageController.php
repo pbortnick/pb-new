@@ -41,8 +41,15 @@ class HomePageController extends PageController
 
   public function submitComment($data, $form)
   {
+
+    $existing = $this->Comments()->filter([
+      'Comment' => $data['Comment']
+    ]);
+
+    $session = $this->getRequest()->getSession();
+    $session->set("FormData.{$form->getName()}.data", $data);
     $comment = HomePageComment::create();
-    $comment->HomePageSlideID = $this->ID;
+    $comment->HomePageID = $this->ID;
     $comment->Name = $data['Name'];
     $comment->Email = $data['Email'];
     $date->Date = $data['Date'];
@@ -51,6 +58,7 @@ class HomePageController extends PageController
     $form->saveInto($comment);
     $comment->write();
 
+    $session->clear("FormData.{$form->getName()}.data");
     $form->sessionMessage('Thanks for your comment!','good');
 
     return $this->redirectBack();
